@@ -16,9 +16,9 @@ The reproducibility crisis has been a huge issue across the sciences. As statist
 ::: {.important style="float: left; width: 65%;"}
 **Goals:**
 
--   Describe reproducible workflows
+-   Discuss reproducible workflows
 
--   Implement a reproducible workflow with Git/GitHub and Quarto
+-   Implement a reproducible workflow with Git/GitHub
 
 Use case: RStudio with git installed on the computer
 
@@ -45,29 +45,15 @@ knitr::include_graphics("img/QR.png")
 - In the downtime, say hello to the people next to you!
 
 
+## Data Science Workflow
 
-## Motivation stuff
+Usually
 
-Pull some examples from big ideas?
-
-
-Majority of these students work with data
-
-We have a responsibility to help create literate, critical, ethical thinkers in this world of big data
-
-
-How: Immerse students in modern data practices
-
-Immerse students (and faculty) in collaboration and reproducibility
-
-Demonstrate reproducibility
-Journals are requiring preregistration, data for submissions, and code to be available in order to reproduce studies. 
-Public library of science 
-Natural science 
-Most International Committee of Medical Journal Editors
-etc
-
-## New slide
+-   Read in raw data and manipulate it
+-   Combine data sources
+-   Summarize data to glean insights
+-   Apply common analysis methods
+-   Communicate Effectively
 
 ::: {.important style="float: right; width: 30%;"}
 ```{r, echo = FALSE, fig.align='center', out.width = "450px"}
@@ -75,17 +61,16 @@ knitr::include_graphics("img/works.jpg")
 ```
 :::
 
+> Want to document this process and make it reproducible, collaborative, and easily shared!
 
 
+## Big Issues
 
-## Outline Reproducibility Ideas
+Pushed by [psychology](https://www.gsb.stanford.edu/faculty-research/behavioral-lab/conduct-research/pre-registration-information), journals are requiring [preregistration](https://www.cos.io/initiatives/prereg), data for submissions, and code to be available in order to reproduce studies
 
+- We have a responsibility to help create literate, critical, ethical thinkers in this world of big data
 
-## Discuss Common Technologies & Basic usage
-
-
-
-
+    + Immerse students in modern data practices
 
 
 ## A Bit About Me
@@ -189,6 +174,8 @@ Designed to be used in three ways ([R for Data Science](https://r4ds.hadley.nz/q
 -   Collaborating with other data scientists (including future you!)
 
 -   As environment to do data science (documents what you did and what you were thinking)
+
+**Give example assignments here that require quarto/notebook?**
 
 ## Delicious Meal Again!
 
@@ -365,17 +352,6 @@ If only she'd use Quarto with GitHub!
     - Some functionality similar to quarto
     
 
-## Data Science Workflow
-
-Usually
-
--   Read in raw data and manipulate it
--   Combine data sources
--   Summarize data to glean insights
--   Apply common analysis methods
--   Communicate Effectively
-
-> Want to document this process and make it reproducible, collaborative, and easily shared!
 
 
 ## Practice!
@@ -396,6 +372,7 @@ Usually
 knitr::include_graphics("img/QR.png")
 ```
 
+Websites
 
 ## Recap
 
