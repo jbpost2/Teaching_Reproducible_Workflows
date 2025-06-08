@@ -5,9 +5,45 @@ format: revealjs
 ---
 
 
-## Abstract
+<!--## Abstract
 
 The reproducibility crisis has been a huge issue across the sciences. As statisticians, data analysts, and practitioners of statistics and data science we can do our part by ensuring that the data wrangling and analysis done is documented and reproducible. This session discusses the importance of teaching students the framework of reproducible workflows along with common technologies that make the process (mostly) painless. 
+-->
+
+
+## Welcome!
+
+::: {.important style="float: left; width: 65%;"}
+**Goals:**
+
+-   Describe reproducible workflows
+
+-   Implement a reproducible workflow with Git/GitHub and Quarto
+
+Use case: RStudio with git installed on the computer
+
+Completely web-based alternatives discussed!
+:::
+
+::: {.important style="float: right; width: 30%;"}
+```{r, echo = FALSE, fig.align='center', out.width = "450px"}
+knitr::include_graphics("img/repro.png")
+```
+:::
+
+
+## Get to Know Each Other
+
+Please head to this online poll:
+
+- <a href = "https://app.wooclap.com/IOQROK?from=event-page" target = "_blank">https://app.wooclap.com/IOQROK?from=event-page</a>
+
+```{r, echo = FALSE, fig.align='center', out.width = "450px"}
+knitr::include_graphics("img/QR.png")
+```
+
+- In the downtime, say hello to the people next to you!
+
 
 
 ## Motivation stuff
@@ -31,6 +67,8 @@ Natural science
 Most International Committee of Medical Journal Editors
 etc
 
+## New slide
+
 ::: {.important style="float: right; width: 30%;"}
 ```{r, echo = FALSE, fig.align='center', out.width = "450px"}
 knitr::include_graphics("img/works.jpg")
@@ -38,15 +76,7 @@ knitr::include_graphics("img/works.jpg")
 :::
 
 
-How: Appropriate and informed use of AI
-https://www.psychiatrist.com/news/neda-suspends-ai-chatbot-for-giving-harmful-eating-disorder-advice/
 
-Have the conversations
-Share the examples 
-Teach as a tool vs truth
-
-AI as an aide
-AI mistake example
 
 ## Outline Reproducibility Ideas
 
@@ -54,35 +84,9 @@ AI mistake example
 ## Discuss Common Technologies & Basic usage
 
 
-## Welcome!
 
-::: {.important style="float: left; width: 65%;"}
-**Goals:**
 
--   Describe reproducible workflows
 
--   Implement a reproducible workflow with Git/GitHub and Quarto
-
-Ideally, use RStudio with git installed on the computer. Completely web-based alternatives discussed!
-:::
-
-::: {.important style="float: right; width: 30%;"}
-```{r, echo = FALSE, fig.align='center', out.width = "450px"}
-knitr::include_graphics("img/repro.png")
-```
-:::
-
-## Get to Know Each Other
-
-Please head to this online poll:
-
-- <https://app.wooclap.com/PAOXSP>
-
-```{r, echo = FALSE, fig.align='center', out.width = "450px"}
-knitr::include_graphics("img/QR.png")
-```
-
-- In the downtime, say hello to the people next to you!
 
 ## A Bit About Me
 
@@ -145,30 +149,66 @@ knitr::include_graphics("img/food_good.jpg")
 
 Delicious! She did it!
 
--
--
+
+## Including Thoughts/Comments
+
+Lousia has trouble remembering what she was thinking when trying her recipes! 
+
+```{r, echo = FALSE, fig.align='center'}
+knitr::include_graphics("img/Louisa_work.jpg")
+```
+
+
+## Fatherly Advice: Quarto
+
+If only she'd use Quarto (or, alternatively, Jupyter) Notebooks!
+
+
+## Fatherly Advice: Quarto
+
+If only she'd use Quarto (or, alternatively, Jupyter) Notebooks!
+
+::: {.important style="float: left; width: 50%;"}
+-   Give us a way to include thoughts and comments with nice formatting
+- Can output to HTML, PDF, Word, Power Point, ...
+- Code can be included and output automatically embedded!
+:::
+
+::: {.important style="float: right; width: 50%;"}
+```{r, echo = FALSE, fig.align='center', out.width = "450px"}
+knitr::include_graphics("img/quarto.png")
+```
+:::
+
+## Quarto
+
+Designed to be used in three ways ([R for Data Science](https://r4ds.hadley.nz/quarto))
+
+-   Communicating to decision makers (focus on conclusions not code)
+
+-   Collaborating with other data scientists (including future you!)
+
+-   As environment to do data science (documents what you did and what you were thinking)
+
+## Delicious Meal Again!
+
+```{r, echo = FALSE, fig.align='center', out.width = "350px"}
+knitr::include_graphics("img/bad_food.jpg")
+```
+
+She changed some things in the recipe and now can't get it right!
+
 
 ## Delicious Meal!
 
 ```{r, echo = FALSE, fig.align='center', out.width = "350px"}
-knitr::include_graphics("img/food_good.jpg")
+knitr::include_graphics("img/bad_good.jpg")
 ```
 
-Delicious! She did it!
+She changed some things in the recipe and now can't get it right!
 
-- Wait... How did she do that? 
--
-
-## Delicious Meal!
-
-```{r, echo = FALSE, fig.align='center', out.width = "350px"}
-knitr::include_graphics("img/food_good.jpg")
-```
-
-Delicious! She did it!
-
-- Wait... How did she do that? 
 - Oh no! Lack of reproducibility!
+
 
 ## Fatherly Advice: Git/GitHub
 
@@ -192,7 +232,7 @@ knitr::include_graphics("img/final_doc.png")
 
 ## Git: Version Control Software
 
-- You associate git with a folder (repo)
+- Install git and then you associate it with a folder (repo)
 
     -   Git keeps track of all files in the folder (repo)
     -   If you want to keep changes you've made, you **commit** the changes
@@ -200,7 +240,8 @@ knitr::include_graphics("img/final_doc.png")
 ```{r, echo = FALSE, fig.align='center'}
 knitr::include_graphics("img/git_tracking.png")
 ```
-    
+
+
 ## Git & GitHub
 
 -   **Git** is a version control software
@@ -212,6 +253,27 @@ knitr::include_graphics("img/git_tracking.png")
 ```{r, echo = FALSE, fig.align='center'}
 knitr::include_graphics("img/github.png")
 ```
+
+
+## Basic Git Workflow (Individual)
+
+1. (Initially) **clone** the repo locally.  (Later) **pull** to get most recent versions of files
+
+2. Work and make changes
+
+3. **add** and **commit** to changes you like
+
+4. **push** changes to remote repo (on github)
+
+
+## Technical vs Non-Technical Courses
+
+- Installing Git & `R`/`RStudio` may or may not be feasible
+
+- Can all be done without programming
+
+- Can use web-based programming environments like <a href = "https://colab.research.google.com/" target = "_blank">Google Colab</a> with a `.ipynb` file
+
 
 
 ## Mixing Cuisines!
@@ -256,46 +318,6 @@ R projects provide a straightforward way to divide your work into multiple conte
 
 > -   Can be used outside of git/github
 > - Spyder IDE for python has similar functionality
-
-## Including Thoughts/Comments
-
-Lousia has trouble remembering what she was thinking when trying her recipes! 
-
-```{r, echo = FALSE, fig.align='center'}
-knitr::include_graphics("img/Louisa_work.jpg")
-```
-
-
-## Fatherly Advice: Quarto
-
-If only she'd use Quarto (or, alternatively, Jupyter) Notebooks!
-
-
-## Fatherly Advice: Quarto
-
-If only she'd use Quarto (or, alternatively, Jupyter) Notebooks!
-
-::: {.important style="float: left; width: 50%;"}
--   Give us a way to include thoughts and comments with nice formatting
-- Can output to HTML, PDF, Word, Power Point, ...
-- Code can be included and output automatically embedded!
-:::
-
-::: {.important style="float: right; width: 50%;"}
-```{r, echo = FALSE, fig.align='center', out.width = "450px"}
-knitr::include_graphics("img/quarto.png")
-```
-:::
-
-## Quarto
-
-Designed to be used in three ways ([R for Data Science](https://r4ds.hadley.nz/quarto))
-
--   Communicating to decision makers (focus on conclusions not code)
-
--   Collaborating with other data scientists (including future you!)
-
--   As environment to do data science (documents what you did and what you were thinking)
 
 
 ## Sharing Recipes
@@ -401,3 +423,27 @@ Reproducibility means:
 ```{r, echo = FALSE, fig.align='center', out.width = "500px"}
 knitr::include_graphics("img/Louisa_eat.jpg")
 ```
+
+
+
+rtutor.ai 
+
+do the weights differ by diet?
+this doesn't take into account time. How do we do that?
+
+create a spaghetti plot of chick weights by diet over time. 
+then -> Add lines for the mean of each diet group.
+
+Then grab markdown report
+
+
+
+How: Appropriate and informed use of AI
+https://www.psychiatrist.com/news/neda-suspends-ai-chatbot-for-giving-harmful-eating-disorder-advice/
+
+Have the conversations
+Share the examples 
+Teach as a tool vs truth
+
+AI as an aide
+AI mistake example
