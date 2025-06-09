@@ -1,7 +1,9 @@
 ---
 title: "Teaching Reproducible Workflows"
 subtitle: "Reproducible workflows are important! Tools like GitHub, Quarto, and Google Colab make reproducibility easy-ish."
-format: revealjs
+format:
+  revealjs:
+    theme: moon
 ---
 
 

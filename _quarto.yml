@@ -8,3 +8,5 @@ project:
     - presentation.qmd
     - quarto_Markdown.qmd
     - RStudio_GitHub.qmd
+theme: 
+  - slate
