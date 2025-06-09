@@ -5,12 +5,6 @@ format: revealjs
 ---
 
 
-<!--## Abstract
-
-The reproducibility crisis has been a huge issue across the sciences. As statisticians, data analysts, and practitioners of statistics and data science we can do our part by ensuring that the data wrangling and analysis done is documented and reproducible. This session discusses the importance of teaching students the framework of reproducible workflows along with common technologies that make the process (mostly) painless. 
--->
-
-
 ## Welcome!
 
 ::: {.important style="float: left; width: 65%;"}
@@ -19,10 +13,6 @@ The reproducibility crisis has been a huge issue across the sciences. As statist
 -   Discuss reproducible workflows
 
 -   Implement a reproducible workflow with Git/GitHub
-
-Use case: RStudio with git installed on the computer
-
-Completely web-based alternatives discussed!
 :::
 
 ::: {.important style="float: right; width: 30%;"}
@@ -32,7 +22,7 @@ knitr::include_graphics("img/repro.png")
 :::
 
 
-## Get to Know Each Other
+## Let me get to know you!
 
 Please head to this online poll:
 
@@ -45,13 +35,13 @@ knitr::include_graphics("img/QR.png")
 - In the downtime, say hello to the people next to you!
 
 
-## Data Science Workflow
+## Analysis/Data Science Workflow
 
-Usually
+Often
 
--   Read in raw data and manipulate it
--   Combine data sources
--   Summarize data to glean insights
+-   Read in/connect to raw data set
+-   Manipulate/Combine data
+-   Summarize to glean insights
 -   Apply common analysis methods
 -   Communicate Effectively
 
@@ -61,7 +51,11 @@ knitr::include_graphics("img/works.jpg")
 ```
 :::
 
-> Want to document this process and make it reproducible, collaborative, and easily shared!
+## Big Issues
+
+Pushed by [psychology](https://www.gsb.stanford.edu/faculty-research/behavioral-lab/conduct-research/pre-registration-information), journals are requiring [preregistration](https://www.cos.io/initiatives/prereg), data for submissions, and code to be available in order to reproduce studies
+
+- We have a responsibility to help create literate, critical, ethical thinkers in this world of big data
 
 
 ## Big Issues
@@ -70,8 +64,9 @@ Pushed by [psychology](https://www.gsb.stanford.edu/faculty-research/behavioral-
 
 - We have a responsibility to help create literate, critical, ethical thinkers in this world of big data
 
-    + Immerse students in modern data practices
+> Want to document this process and make it reproducible, collaborative, and easily shared!
 
+> Ideally, we immerse students in *modern* data practices
 
 ## A Bit About Me
 
@@ -146,12 +141,12 @@ knitr::include_graphics("img/Louisa_work.jpg")
 
 ## Fatherly Advice: Quarto
 
-If only she'd use Quarto (or, alternatively, Jupyter) Notebooks!
+If only she'd use Quarto (or perhaps Jupyter) Notebooks!
 
 
 ## Fatherly Advice: Quarto
 
-If only she'd use Quarto (or, alternatively, Jupyter) Notebooks!
+If only she'd use Quarto (or perhaps Jupyter) Notebooks!
 
 ::: {.important style="float: left; width: 50%;"}
 -   Give us a way to include thoughts and comments with nice formatting
@@ -175,21 +170,24 @@ Designed to be used in three ways ([R for Data Science](https://r4ds.hadley.nz/q
 
 -   As environment to do data science (documents what you did and what you were thinking)
 
-**Give example assignments here that require quarto/notebook?**
 
-## Delicious Meal Again!
+## Take-Away
 
-```{r, echo = FALSE, fig.align='center', out.width = "350px"}
+Have students document their thought processes and work along the way!
+
+- Supply narratives to EDA
+
+    - Why do we care about this awesome graph/stat you've found?
+
+- Never give a graph/result/etc. without discussing it!
+
+<a href = "https://go.ncsu.edu/reproducible_workflows" target ="_blank">Some example projects</a>
+
+
+## Can't Make the Delicious Meal Again!
+
+```{r, echo = FALSE, fig.align='center', out.width = "250px"}
 knitr::include_graphics("img/bad_food.jpg")
-```
-
-She changed some things in the recipe and now can't get it right!
-
-
-## Delicious Meal!
-
-```{r, echo = FALSE, fig.align='center', out.width = "350px"}
-knitr::include_graphics("img/bad_good.jpg")
 ```
 
 She changed some things in the recipe and now can't get it right!
@@ -199,12 +197,12 @@ She changed some things in the recipe and now can't get it right!
 
 ## Fatherly Advice: Git/GitHub
 
-If she'd just used Git/GitHub to track her recipes, we wouldn't be in this mess!
+If she'd just used Git/GitHub to track her past recipes, we wouldn't be in this mess!
 
 
 ## Fatherly Advice: Git/GitHub
 
-If she'd just used Git/GitHub to track her recipes, we wouldn't be in this mess!
+If she'd just used Git/GitHub to track her past recipes, we wouldn't be in this mess!
 
 ::: {.important style="float: left; width: 45%;"}
 -   Git: keeps all recipe versions without this -->
@@ -424,3 +422,9 @@ Teach as a tool vs truth
 
 AI as an aide
 AI mistake example
+
+
+<!--## Abstract
+
+The reproducibility crisis has been a huge issue across the sciences. As statisticians, data analysts, and practitioners of statistics and data science we can do our part by ensuring that the data wrangling and analysis done is documented and reproducible. This session discusses the importance of teaching students the framework of reproducible workflows along with common technologies that make the process (mostly) painless. 
+-->
