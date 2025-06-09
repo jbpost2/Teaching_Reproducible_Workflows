@@ -181,7 +181,7 @@ Have students document their thought processes and work along the way!
 
 - Never give a graph/result/etc. without discussing it!
 
-<a href = "https://go.ncsu.edu/reproducible_workflows" target ="_blank">Some example projects</a>
+Some example projects: <a href = "https://go.ncsu.edu/reproducible_workflows" target ="_blank">https://go.ncsu.edu/reproducible_workflows</a>
 
 
 ## Can't Make the Delicious Meal Again!
@@ -251,14 +251,25 @@ knitr::include_graphics("img/github.png")
 4. **push** changes to remote repo (on github)
 
 
-## Technical vs Non-Technical Courses
+## Take Away
 
-- Installing Git & `R`/`RStudio` may or may not be feasible
+Version control software simplifies your life!
 
-- Can all be done without programming
+- Widely used in industry
+
+## Take Away
+
+Version control software simplifies your life!
+
+- Widely used in industry
+
+More Technical vs Less Technical Courses
+
+- Installing Git & `R`/`RStudio`/`Anaconda` may or may not be feasible
 
 - Can use web-based programming environments like <a href = "https://colab.research.google.com/" target = "_blank">Google Colab</a> with a `.ipynb` file
 
+- Note: GitHub can be used without installing anything!
 
 
 ## Mixing Cuisines!
@@ -274,103 +285,104 @@ knitr::include_graphics("img/Louisa_work_2.jpg")
 
 If only she'd use R projects!
 
-## Fatherly Advice: R Projects
-
-If only she'd use R projects!
-
-::: {.important style="float: left; width: 50%;"}
-- Basically a file that gets associated with a folder (repo)
-
-- Maintains a working directory, history, environment, etc.
-
-- Easy to switch between projects!
-:::
-
 ::: {.important style="float: right; width: 50%;"}
-```{r, echo = FALSE, fig.align='center', out.width = "350px"}
+```{r, echo = FALSE, fig.align='center', out.width = "450px"}
 knitr::include_graphics("img/R_project.png")
 ```
 :::
 
 ## R Projects
 
-R projects provide a straightforward way to divide your work into multiple contexts. Each with their own:
+- Basically a file that gets associated with a folder (repo)
 
--   Working directory
--   Workspace (environment with stored data/objects)
--   History
--   Folder structure & source documents
+- Maintains a working directory, history, environment, etc.
 
-> -   Can be used outside of git/github
-> - Spyder IDE for python has similar functionality
+- Easy to switch between projects without losing work/needing to rerun code
+
+- Combines flawlessly with github!
+
+## Take Away
+
+R projects provide a straightforward way to divide your work into multiple contexts
+
+- Usually associated with a folder
+- R projects can be created from github repos!
+- Spyder IDE for python has similar functionality
 
 
 ## Sharing Recipes
 
-Louisa wants to share her delicious recipes with her friends! 
+Louisa wants to share & collaborate with her friends! 
 
 ```{r, echo = FALSE, fig.align='center'}
 knitr::include_graphics("img/Louisa_Cora.jpg")
 ```
 
-## Fatherly Advice: Use Quarto & Github
+## Fatherly Advice: Use Quarto/R Projects/Github
 
-If only she'd use Quarto with GitHub!
-
-
-## Fatherly Advice: Use Quarto & Github
-
-If only she'd use Quarto with GitHub!
-
--   Easy way to **collaborate** and share **results** 
-
-- Can simply store code on git/github or include output from quarto
-
-- Quarto can easily(-ish) create a webpage on github!
+If only she'd used an **R project** with **Quarto documents** while being linked to **GitHub**!
 
 
-## List of Tools
+## Collaboration with Git & GitHub
 
-- Git: Version control software
-- GitHub: Online platform for using git/collaborating
-- R Project: Keep analysis in its own context
-- Quarto: Integrate text and code to create useful output docs
+- Everyone can work on the same `branch` and just take turns working
 
-## List of Tools
-
-- Git: Version control software
-- GitHub: Online platform for using git/collaborating
-- R Project: Keep analysis in its own context
-- Quarto: Integrate text and code to create useful output docs
-
-
-- [Google Colab](https://colab.research.google.com/) - web based way to program in python and R 
-
-    - Can use with github
-    - Some functionality similar to quarto
-    
-
-
-
-## Practice!
-
-- Sign up for github account
-- Create a repo
-- Make some changes! Check version control
-
-
-## Practice!
-
-- Sign up for github account
-- Create a repo
-- Make some changes! Check version control
-- <https://app.wooclap.com/PAOXSP>
-
-```{r, echo = FALSE, fig.align='center', out.width = "450px"}
-knitr::include_graphics("img/QR.png")
+```{r, echo = FALSE, fig.align='center', out.width = "500px"}
+knitr::include_graphics("img/git_diagram.png")
 ```
 
-Websites
+
+## Working on Branches
+
+- Alternatively, you can have separate **branches** of the repo
+
+```{r, echo = FALSE, fig.align='center', out.width = "500px"}
+knitr::include_graphics("img/git_branch_diagram.png")
+```
+
+- Work on a branch is similar to working on the main branch
+
+- Can **merge** branches when happy!
+
+
+## Take Away
+
+Version control software that allows for collaboration and working on separate versions of code is an industry standard!
+
+- Git has a steep learning curve but the basics can be done with the web platform
+
+
+## List of Tools
+
+- Quarto: Integrate text and code to create useful output docs
+- R Project: Keep analysis in its own context
+- Git: Version control software
+- GitHub: Online platform for using git/collaborating
+- [Google Colab](https://colab.research.google.com/) - web based way to program in python and R 
+
+
+## Communicating!
+
+- Quarto can be used to create websites on GitHub!
+
+    + <https://jbpost2.github.io/ST-558-Data-Science-for-Statisticians/>
+    + <https://jbpost2.github.io/ST-554-Big-Data-with-Python/>
+
+
+## The AI Thing...
+
+- New sites the run code with AI
+
+    + https://rtutor.ai/ 
+
+    + Chicken data questions: 
+    
+        - Do the weights differ by diet?
+        - How do we take into account time?
+        - Can we create a spaghetti plot of chick weights by diet over time?
+        - Can we add lines for the mean of each diet group?
+  
+    + Can grab a markdown report!
 
 ## Recap
 
@@ -391,7 +403,7 @@ Reproducibility means:
 
 - `justin_post@ncsu.edu`
 
-- <https://go.ncsu.edu/reproducibility>
+- <a href = "https://go.ncsu.edu/reproducible_workflows" target ="_blank">https://go.ncsu.edu/reproducible_workflows</a>
 
 - Special thanks to Louisa
 
@@ -399,32 +411,3 @@ Reproducibility means:
 knitr::include_graphics("img/Louisa_eat.jpg")
 ```
 
-
-
-rtutor.ai 
-
-do the weights differ by diet?
-this doesn't take into account time. How do we do that?
-
-create a spaghetti plot of chick weights by diet over time. 
-then -> Add lines for the mean of each diet group.
-
-Then grab markdown report
-
-
-
-How: Appropriate and informed use of AI
-https://www.psychiatrist.com/news/neda-suspends-ai-chatbot-for-giving-harmful-eating-disorder-advice/
-
-Have the conversations
-Share the examples 
-Teach as a tool vs truth
-
-AI as an aide
-AI mistake example
-
-
-<!--## Abstract
-
-The reproducibility crisis has been a huge issue across the sciences. As statisticians, data analysts, and practitioners of statistics and data science we can do our part by ensuring that the data wrangling and analysis done is documented and reproducible. This session discusses the importance of teaching students the framework of reproducible workflows along with common technologies that make the process (mostly) painless. 
--->

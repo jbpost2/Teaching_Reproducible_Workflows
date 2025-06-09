@@ -1,0 +1,457 @@
+---
+output: pdf_document
+urlcolor: blue
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = TRUE)
+knitr::opts_chunk$set(echo = FALSE, eval = TRUE, cache = TRUE)
+```
+
+# Project 1  
+
+## Overall Goal
+
+Our goal is to write functions that will manipulate and process data sets that come in a certain form.  You'll then create fit some basic linear regression models and implement a cross-validation algorithm to judge the models. 
+
+This project is meant to assess your ability to program in python.  You'll write up your project in a google colab notebook. A link to the notebook should be submitted in the assignment link - please update your sharing settings so we can view the file.  The result should be a report with a narrative throughout, section headings, graphs outputted in appropriate places, etc.  To be clear **be sure to include markdown text describing what you are doing and your thought process (not just the question prompts), even when not explicitly asked for!**  The audience you are writing for is someone that understands programming and very basic statistics, but would need you to provide details and explanation of what you are doing to understand it.  
+
+ **Both partners should submit the link.**
+
+## Data
+
+We'll use a number of `.csv` files that contain information from the census bureau surveys.  This data is a little older (2010 is the newest data).  Our first goal will be to read in one of these `.csv` files and parse the data using functions we've written.  Then we'll combine some parsed data and deal with it from there.
+
+## Part 1: Data Processing  
+
+### First Steps 
+
+First I'll just explain what you'll do to parse the data you read in.  Then I'll give you requirements on how to parse it afterward. (I find it easier to first do all of the things below without writing functions first. Then convert your code into the required functions.) You only need to include your final work/functions with narrative in your submitted document.
+
+Read in the data set available here: <https://www4.stat.ncsu.edu/~online/datasets/EDU01a.csv>
+
+Now the format of the data is kind of weird. There is a column for `Area_name` (US, NC, or a county), a column called `STCOU`, and then four columns corresponding to each question on the survey. This survey was about school enrollment. Let's process this data!
+
+1. Select only the following columns:
+    - `Area_name` 
+    - `STCOU`
+    - Any column that ends in "D"
+    - To do the above, use the `.loc[]` method. Note that the `.str.endswith()` method can be used on the column names for the columns that end with "D".
+
+2. The data you'll have is in **wide** format. That is, there are multiple observations in a given row (each column that ends in "D" corresponds to a particular year's measurement). 
+We want to convert the data into **long** format where each row has only one enrollment value for that `Area_name`. Do this operation using the `pd.melt()` function ([info here](https://pandas.pydata.org/docs/user_guide/reshaping.html#reshaping-melt)).
+
+3. One of the new columns should now correspond to the old column names that ended with a "D".  (All columns in these census data files will have this similar format - For more about the variables see [the data information sheet](https://www4.stat.ncsu.edu/~online/datasets/Mastdata.xls))  
+The first three characters of the former column names represent the survey and the next four characters represent the type of value you have from that survey.  The last two characters prior to the "D" represent the year of the measurement. For this part: 
+    - Create a loop that loops over the rows of the data frame
+    - At each iteration, 
+        + parse the string from your new column in order to pull out the year and convert it into a **numeric** value such as `1997` or `2002.` Add this new `year` variable to your data frame. Note: the data set above only has data from the 1900's but the next data set we read in has data from the 2000's. Handle that appropriately!
+        + grab the first three characters and following four digits to create a new variable representing which measurement was grabbed.  Add this new `measurement` variable to your data frame as well. 
+    - Drop the original column name variable.
+
+4. Split the data frame into two data frames:
+
+    - one data frame should contain only non-county data
+    - the other should contain only county level data  
+
+    Note that all county measurements have the format "County Name, DD" where "DD" represents the state.  Use the `.apply()` method with a `lambda` function to create an indexing vector you use to do the subsetting. `np.logical_not()` comes in handy!
+
+5. For the county level data frame, create a new variable that describes which state one of these county measurements corresponds to (the two digit abbreviation is fine!).  
+
+6. For the non-county level data frame, create a new variable called `division` corresponding to the state’s classification of division [here](https://en.wikipedia.org/wiki/List_of_regions_of_the_United_States) (the Census Bureau-designated regions and divisions).  If the row corresponds to a non-state (i.e. `UNITED STATES`), return `ERROR` for the division.  The code for this part will not be a ton of fun to write! Write a function with basic `if/elif` for a single value of `Area_name`. Then, use `np.vectorize()` to make it work for a full vector of values.
+
+### Requirements
+
+Now we want to repeat the above process for the 2nd component of the data set.  This is available at the link below.
+
+- <https://www4.stat.ncsu.edu/~online/datasets/EDU01b.csv>
+
+Rather than copying and pasting a bunch of stuff and changing things here and there, we want to write functions that do the above pieces and one function that we can call to do it all!
+
+- Write one function that takes care of steps 1 & 2 above.  Give an optional argument (that is it has a default value) that allows the user to specify the name of the column representing the value ('enrollment' for these two data sets).
+- Write another function that takes in the output of step 2 and does step 3 above.
+- Write a function to do step 5
+- Write a function to do step 6
+- Write another function that takes in the output from step 3 and creates the two data frames in step 4, calls the above two functions (to perform steps 5 and 6), and returns two final data frames
+
+Now last thing, put it all into one function call!  This is called creating a [wrapper](https://en.wikipedia.org/wiki/Wrapper_function#:~:text=A%20wrapper%20function%20is%20a,little%20or%20no%20additional%20computation.) function.  Create a function that takes in the URL of a `.csv` file in this format and the optional argument for the variable name, calls the functions you wrote above, and then returns the two data frames in a list.
+
+```{python, eval = FALSE}
+#here is the idea in case it isn't clear
+def wrapper(url, value_name = "default_of_some_kind"):
+  #don't use a,b,c,d - use more intuitive variable names
+  #a = read_and_pivot(...)
+  #b = parse_info(a, ...)
+  #return function_for_step_6(b, ...) (this function calls the other functions mentioned)
+```
+
+```{python, echo = FALSE, eval = TRUE}
+import pandas as pd
+import numpy as np
+# ed_data = pd.read_csv("https://www4.stat.ncsu.edu/~online/datasets/EDU01b.csv")
+# 
+# #subset columns
+# ed_data.columns
+# D_cols = ed_data.columns.str.endswith("D")
+# D_cols[0:2] = True
+# D_cols
+# 
+# ed_data_sub = ed_data.loc[:, D_cols]
+# ed_data_sub = pd.melt(ed_data_sub, id_vars = ["Area_name", "STCOU"], value_vars = ed_data_sub.columns[2:], var_name = "info", value_name = "enrollment")
+# ed_data_sub
+# 
+# #parse the info measurement
+# ed_data_sub["year"] = np.nan
+# ed_data_sub["measurement"] = ""
+# for i in range(ed_data_sub.shape[0]):
+#     two_digit_year = int(ed_data_sub.loc[i, "info"][7:9])
+#     if two_digit_year > 25:
+#         ed_data_sub.loc[i, "year"] = 1900 + two_digit_year
+#     else:
+#         ed_data_sub.loc[i, "year"] = 2000 + two_digit_year
+#     ed_data_sub.loc[i, "measurement"] = ed_data_sub.loc[i, "info"][:7]
+#     
+# #split data into two
+# #index for stats only
+# county_index = ed_data_sub.Area_name.apply(lambda x: True if x[-4] == "," else False)
+# county_data = ed_data_sub[county_index].copy()
+# county_data["state"] = county_data.Area_name.apply(lambda x: x[-2:])
+# 
+# #return just the 
+# non_county_data = ed_data_sub[np.logical_not(county_index)].copy()
+# non_county_data
+# 
+# def get_division(state):
+#     if state in ["CONNECTICUT", "MAINE", "MASSACHUSETTS", "NEW HAMPSHIRE", "RHODE ISLAND", "VERMONT"]:
+#         div = "Division 1"
+#     elif state in ["NEW JERSEY", "NEW YORK", "PENNSYLVANIA"]:
+#         div = "Division 2"
+#     elif state in ["ILLINOIS", "INDIANA", "MICHIGAN", "OHIO", "WISCONSIN"]:
+#         div = "Division 3"
+#     elif state in ["IOWA", "KANSAS", "MINNESOTA", "MISSOURI", "NEBRASKA", "NORTH DAKOTA", "SOUTH DAKOTA"]:
+#         div = "Division 4"
+#     elif state in ["DELAWARE", "FLORIDA", "GEORGIA", "MARYLAND", "NORTH CAROLINA", "SOUTH CAROLINA", "VIRGINIA", "WEST VIRGINIA", "DISTRICT OF COLUMBIA"]:
+#         div = "Division 5"
+#     elif state in ["ALABAMA", "KENTUCKY", "MISSISSIPPI", "TENNESSEE"]:
+#         div = "Division 6"
+#     elif state in ["ARKANSAS", "LOUISIANA", "OKLAHOMA", "TEXAS"]:
+#         div = "Division 7"
+#     elif state in ["ARIZONA", "COLORADO", "IDAHO", "MONTANA", "NEVADA", "NEW MEXICO", "UTAH", "WYOMING"]:
+#         div = "Division 8"
+#     elif state in ["ALASKA", "CALIFORNIA", "HAWAII", "OREGON", "WASHINGTON"]:
+#         div = "Division 9"
+#     else:
+#         div = "ERROR"
+#     return div
+# 
+# v_get_division = np.vectorize(get_division)
+# non_county_data["division"] = v_get_division(non_county_data["Area_name"])
+# non_county_data
+
+
+#- Write one function that does steps 1 & 2 above.  Give an optional argument (that is it has a default value) that allows the user to specify the name of the column representing the value (enrollment for these data sets).
+def read_data_pivot(url, value_name = "enrollment"):
+    ed_data = pd.read_csv(url)
+    #subset columns
+    ed_data.columns
+    D_cols = ed_data.columns.str.endswith("D")
+    D_cols[0:2] = True
+    #Return only columns of interest
+    ed_data_sub = ed_data.loc[:, D_cols]
+    #pivot the data
+    ed_data_sub = pd.melt(ed_data_sub, id_vars = ["Area_name", "STCOU"], value_vars = ed_data_sub.columns[2:], var_name = "info", value_name = value_name)
+    return(ed_data_sub)
+
+#parse the info column to get the year and survey as new variables
+def parse_info(df):
+    df["year"] = np.nan
+    df["measurement"] = ""
+    for i in range(df.shape[0]):
+        two_digit_year = int(df.loc[i, "info"][7:9])
+        if two_digit_year > 25:
+            df.loc[i, "year"] = 1900 + two_digit_year
+        else:
+            df.loc[i, "year"] = 2000 + two_digit_year
+        df.loc[i, "measurement"] = df.loc[i, "info"][:7]
+    return df.drop("info", axis = 1)
+
+#obtain the new state variable
+def add_state(county_data):
+    county_data["state"] = county_data.Area_name.apply(lambda x: x[-2:])
+    return(county_data)
+  
+#obtain the division
+def get_division(state):
+    if state in ["CONNECTICUT", "MAINE", "MASSACHUSETTS", "NEW HAMPSHIRE", "RHODE ISLAND", "VERMONT"]:
+        div = "Division 1"
+    elif state in ["NEW JERSEY", "NEW YORK", "PENNSYLVANIA"]:
+        div = "Division 2"
+    elif state in ["ILLINOIS", "INDIANA", "MICHIGAN", "OHIO", "WISCONSIN"]:
+        div = "Division 3"
+    elif state in ["IOWA", "KANSAS", "MINNESOTA", "MISSOURI", "NEBRASKA", "NORTH DAKOTA", "SOUTH DAKOTA"]:
+        div = "Division 4"
+    elif state in ["DELAWARE", "FLORIDA", "GEORGIA", "MARYLAND", "NORTH CAROLINA", "SOUTH CAROLINA", "VIRGINIA", "WEST VIRGINIA", "DISTRICT OF COLUMBIA"]:
+        div = "Division 5"
+    elif state in ["ALABAMA", "KENTUCKY", "MISSISSIPPI", "TENNESSEE"]:
+        div = "Division 6"
+    elif state in ["ARKANSAS", "LOUISIANA", "OKLAHOMA", "TEXAS"]:
+        div = "Division 7"
+    elif state in ["ARIZONA", "COLORADO", "IDAHO", "MONTANA", "NEVADA", "NEW MEXICO", "UTAH", "WYOMING"]:
+        div = "Division 8"
+    elif state in ["ALASKA", "CALIFORNIA", "HAWAII", "OREGON", "WASHINGTON"]:
+        div = "Division 9"
+    else:
+        div = "ERROR"
+    return div
+
+v_get_division = np.vectorize(get_division)
+
+def add_division(non_county_data):
+    non_county_data["division"] = v_get_division(non_county_data["Area_name"])
+    return(non_county_data)
+
+#bring in the data frame that has both sets of data, split it, and create these new variables
+def split_data(df):
+    county_index =df.Area_name.apply(lambda x: True if x[-4] == "," else False)
+    county_data = df[county_index].copy()
+    non_county_data = df[np.logical_not(county_index)].copy()
+    #add columns
+    county_data = add_state(county_data)
+    non_county_data = add_division(non_county_data)
+    #return both in a list
+    return [county_data, non_county_data]
+  
+#wrapper function to do it all...
+def my_wrapper(url, value_name = "default"):
+    long_data = read_data_pivot(url, value_name = value_name)
+    parsed_data = parse_info(long_data)
+    return split_data(parsed_data)
+  
+```
+
+
+### Call It and Combine Your Data
+
+Call the function you made two times to read in and parse the two `.csv` files mentioned so far.  Be sure to call the new `value` column the same in both function calls.
+
+```{python, echo = FALSE, eval = TRUE}
+dfs1 = my_wrapper("https://www4.stat.ncsu.edu/~online/datasets/EDU01a.csv", "enrollment")
+dfs2 = my_wrapper("https://www4.stat.ncsu.edu/~online/datasets/EDU01b.csv", "enrollment")
+```
+
+Now we want to join the two county level data sets and the two state level data sets. Write a function that takes in unlimited positional arguments. When you call the function these arguments will be the results of calls to your wrapper function (so each argument will be a list with the two data sets in it).
+
+- Within the function itself, use `map()` and a `lambda` function to obtain just the county level data for every argument. Then use the `reduce()` function from the `functools` module with a `lambda` function that calls `pd.concat()`. 
+- Repeat for the non county level data. 
+- Put the two combined data sets into a list and return it (so it will have the same format as the inputs!
+
+Call this function to combine the two data objects into one object (that has two data frames: the combined county level data and the combined non-county level data).  
+
+```{python, echo = FALSE, eval = TRUE}
+from functools import reduce
+def combine_dfs(*dfs):
+    county_data_sets = map(lambda x: x[0], dfs)
+    non_county_data_sets = map(lambda x: x[1], dfs)
+    return [reduce(lambda x, y: pd.concat([x, y], axis = 0), county_data_sets), 
+  reduce(lambda x, y: pd.concat([x, y], axis = 0), non_county_data_sets)]
+```
+
+Note: Here is what the combined data should look like.
+
+```{python}
+dfs1 = my_wrapper("https://www4.stat.ncsu.edu/~online/datasets/EDU01a.csv", "enrollment")
+dfs2 = my_wrapper("https://www4.stat.ncsu.edu/~online/datasets/EDU01b.csv", "enrollment")
+full_dfs = combine_dfs(dfs1, dfs2)
+full_dfs
+```
+
+## Double Check It Generalizes!
+
+Read in another similar data set and apply our functions!
+
+- Run your data processing and combination functions on the four data sets at URLs given below:
+    + https://www4.stat.ncsu.edu/~online/datasets/PST01a.csv
+    + https://www4.stat.ncsu.edu/~online/datasets/PST01b.csv
+    + https://www4.stat.ncsu.edu/~online/datasets/PST01c.csv
+    + https://www4.stat.ncsu.edu/~online/datasets/PST01d.csv
+
+```{python}
+dfs1 = my_wrapper("https://www4.stat.ncsu.edu/~online/datasets/PST01a.csv")
+dfs2 = my_wrapper("https://www4.stat.ncsu.edu/~online/datasets/PST01b.csv")
+dfs3 = my_wrapper("https://www4.stat.ncsu.edu/~online/datasets/PST01c.csv")
+dfs4 = my_wrapper("https://www4.stat.ncsu.edu/~online/datasets/PST01d.csv")
+full_dfs2 = combine_dfs(dfs1, dfs2, dfs3, dfs4)
+full_dfs2
+```
+
+
+## Cross-Validation
+
+For the last part of the project we'll fit two linear regression models and judge them using cross-validation (no training/test split, we'll just use CV). However, we won't be able to use standard cross-validation. We'll write our own function to do it!
+
+### Subset of Data
+
+Use the `enrollment` data sets from earlier. 
+
+- Subset the list object so that we're only looking at the non county level data.
+- Remove any rows where the division variable is `ERROR` and select only the `year`, `division`, and `enrollment` variables (or whatever you called the last one!).
+
+```{python, echo = FALSE}
+#just the dataset frist
+temp = full_dfs[1].loc[full_dfs[1].division != "ERROR", ["year", "division", "enrollment"]]
+```
+
+### Two Models Under Consideration
+
+Well use two competing models:
+
+- A SLR model using `year` to predict `enrollment`
+- An MLR model using `year` and `division` to predict `enrollment`
+
+You'll need to create dummy variables for the `division` variable as we did in the notes and add them to the data frame. When adding these columns to the data frame, you shouldn't keep all 9 variables (recall the last column is redundant given all the others). Be sure to leave one of the indicator columns off!
+
+```{python, echo = FALSE}
+#add the dummies
+modeling = pd.concat([temp.drop("division", axis = 1),
+                      pd.get_dummies(temp.division).drop("Division 9", axis = 1)], 
+                      axis = 1)
+```
+
+If you'd like, feel free to fit the two models to the data here (this doesn't need to go in the final report).
+
+### Cross-Validation
+
+We want to see how well these two competing models do at predicting. However, we can't use the usual cross-validation because our data is over time (`year`). 
+
+Instead, what we want to do is train the model/judge it sequentially. 
+
+1. Use the first three years of data to fit the model. Use that model to predict the fourth year. Calculate the MSE for those predictions.
+2. Use the first four years of data to fit the model. Use that model to predict the fifth year. Calculate the MSE for those predictions.
+3. Repeat until you predict for the last year.
+4. Sum up the MSE values to get an overall MSE for the model!
+
+Write a function to do the above given a particular `X`, `y`, and starting `year`.
+
+Some guidelines and helpful hints:
+
+- First write a function to get the MSE for one step of the above only (don't worry about combining things yet).
+    + Have this function take in a data frame of predictors `X` (this will be used in the `.fit()` method of a `LinearRegression()` object), a 1D response `y`, and a `last_year` argument.
+    + Use the `last_year` argument to subset the data into a training `X` and `y` and a testing `X` and `y`. Have your training set include all years up to and including `last_year` and your test set just include the year `last_year` + 1.  
+    + Do the model fitting and predictions. Return the mean squared error
+- That will act as a helper function for our function that find the CV error.
+- Now write a function to obtain the CV value over all the years (other than the initial training block)
+    + Have this function take in `X`, `y` (both as above), and a `first_year` argument. 
+    + If the `first_year` is less than 1989, have the function raise an error and return a message
+    + Initialize an MSE value at 0
+    + If the not, use a loop from `first_year` to the last year in the data set (find that value programmatically)
+        - Within the loop, use your previous function and augmented assignment to add the MSE for the given year
+    + Return the MSE
+    
+Now run your function using the SLR model. Repeat using the MLR model. Discuss the MSE values you see.
+
+
+```{python, echo = FALSE, eval = FALSE}
+from sklearn.model_selection import train_test_split, cross_validate
+from sklearn.metrics import mean_squared_error
+from sklearn.linear_model import LinearRegression, LassoCV, Lasso
+
+#now initial fold
+initial = modeling[modeling.year <= 1989]
+with_div = LinearRegression().fit(initial.drop(["enrollment"], axis = 1), initial.enrollment)
+no_div = LinearRegression().fit(initial.year.values.reshape(-1,1), initial.enrollment)
+
+#predict on the next year of data
+data_1990 = modeling[modeling.year == 1990]
+with_preds = with_div.predict(data_1990.drop(["enrollment"], axis = 1))
+no_preds = no_div.predict(data_1990.year.values.reshape(-1,1))
+
+#find and save the MSE
+with_MSE = mean_squared_error(data_1990.enrollment, with_preds)
+no_MSE = mean_squared_error(data_1990.enrollment, no_preds)
+
+#now preds with <=1990...
+
+
+#write function to give a year and find model for <= that year, return MSE for next year's data
+def get_fit(X, y, last_year):
+    X_train = X[X.year <= last_year]
+    y_train = y[X.year <= last_year]
+    X_test = X[X.year == (last_year + 1)]
+    y_test = y[X.year == (last_year +1)]
+    lm_fit = LinearRegression().fit(X_train, y_train)
+    #find predictions on next year of data, return MSE
+    return mean_squared_error(y_test, lm_fit.predict(X_test))
+
+X_no = pd.DataFrame(modeling.year)
+X_with = modeling.drop(["enrollment"], axis = 1)
+y = modeling.enrollment
+get_fit(X = X_no, y = y, last_year = 1989)
+get_fit(X = X_with, y = y, last_year = 1989)
+get_fit(X = X_no, y = y, last_year = 1990)
+get_fit(X = X_with, y = y, last_year = 1990)
+get_fit(X = X_no, y = y, last_year = 2000)
+get_fit(X = X_with, y = y, last_year = 1990)
+
+#Ok, but nowlet's make a function to go through all the years and do this, summing up the values
+def get_CV(X, y, first_year):
+    if first_year < 1989:
+        raise ValueError("Should be a later year")
+    MSE = 0
+    for i in range(first_year, int(X.year.max())):
+        MSE += get_fit(X, y, i)
+    return MSE
+  
+  
+get_CV(X_no, y, first_year = 1989)
+get_CV(X_with, y, first_year = 1989)
+
+
+temp2 = full_dfs[1].loc[full_dfs[1].division != "ERROR", ["year", "Area_name", "enrollment"]]
+
+modeling2 = pd.concat([temp2.drop("Area_name", axis = 1), pd.get_dummies(temp2.Area_name).drop("WYOMING", axis = 1)], axis = 1)
+
+X_with_full = modeling2.drop(["enrollment"], axis = 1)
+get_CV(X_with_full, y, first_year = 1989)
+
+
+X_no = X_no.reset_index(drop = True)
+y = y.reset_index(drop = True)
+
+my_cv = []
+for i in range(1, 18):
+    my_cv.append(
+      (np.array(np.linspace(0,51*(i+2)-1,51*(i+2))), np.array(np.linspace(0,50,51) + 51*(i+2))))
+      
+MSE_h = 0
+for i, j in my_cv:
+    X_to_fit = X_no.iloc[i]
+    y_to_fit = y.iloc[i]
+    X_to_test = X_no.iloc[j]
+    y_to_test = y.iloc[j]
+    my_fit = LinearRegression().fit(X = X_to_fit, y = y_to_fit)
+    MSE_h += mean_squared_error(y_to_test, my_fit.predict(X_to_test))
+
+```
+
+That's everything. Check the rubric on the next page to make sure you are comfortable with your submission. Good luck!  Have fun!
+
+\newpage
+
+# Rubric for Grading (total = 100 points)
+
+Item                      | Points | Notes  
+--------------------------|--------|---------------------------
+Introduction to purpose of report  | 5     | Worth either 0, 2, or 5
+Data Processing Functions | 45 | Worth either 0, 5, 10, ..., 45
+Combining Data Function | 15 | Worth either 0, 3, 5, ..., 15
+Cross Validation Functions | 35 | Worth either 0, 3, 5, ..., 35
+
+Notes on grading:  
+
+- For each item in the rubric, your grade will be lowered one level for each each error (syntax, logical, or other) in the code and for each required item that is missing or lacking a description.  
+
+- **You should use Good Programming Practices when coding (see wolfware).  If you do not follow GPP you can lose up to 30 points on the project.**  
+
+The reports should include a narrative throughout, section headings, graphs outputted in appropriate places, etc.  To be clear **be sure to include markdown text describing what you are doing, even when not explicitly asked for!**  Points will be deducted from appropriate sections as appropriate.

@@ -1,0 +1,413 @@
+---
+title: "Teaching Reproducible Workflows"
+subtitle: "Reproducible workflows are important! Tools like GitHub, Quarto, and Google Colab make reproducibility easy-ish."
+format: revealjs
+---
+
+
+## Welcome!
+
+::: {.important style="float: left; width: 65%;"}
+**Goals:**
+
+-   Discuss reproducible workflows
+
+-   Implement a reproducible workflow with Git/GitHub
+:::
+
+::: {.important style="float: right; width: 30%;"}
+```{r, echo = FALSE, fig.align='center', out.width = "450px"}
+knitr::include_graphics("img/repro.png")
+```
+:::
+
+
+## Let me get to know you!
+
+Please head to this online poll:
+
+- <a href = "https://app.wooclap.com/IOQROK?from=event-page" target = "_blank">https://app.wooclap.com/IOQROK?from=event-page</a>
+
+```{r, echo = FALSE, fig.align='center', out.width = "450px"}
+knitr::include_graphics("img/QR.png")
+```
+
+- In the downtime, say hello to the people next to you!
+
+
+## Analysis/Data Science Workflow
+
+Often
+
+-   Read in/connect to raw data set
+-   Manipulate/Combine data
+-   Summarize to glean insights
+-   Apply common analysis methods
+-   Communicate Effectively
+
+::: {.important style="float: right; width: 30%;"}
+```{r, echo = FALSE, fig.align='center', out.width = "450px"}
+knitr::include_graphics("img/works.jpg")
+```
+:::
+
+## Big Issues
+
+Pushed by [psychology](https://www.gsb.stanford.edu/faculty-research/behavioral-lab/conduct-research/pre-registration-information), journals are requiring [preregistration](https://www.cos.io/initiatives/prereg), data for submissions, and code to be available in order to reproduce studies
+
+- We have a responsibility to help create literate, critical, ethical thinkers in this world of big data
+
+
+## Big Issues
+
+Pushed by [psychology](https://www.gsb.stanford.edu/faculty-research/behavioral-lab/conduct-research/pre-registration-information), journals are requiring [preregistration](https://www.cos.io/initiatives/prereg), data for submissions, and code to be available in order to reproduce studies
+
+- We have a responsibility to help create literate, critical, ethical thinkers in this world of big data
+
+> Want to document this process and make it reproducible, collaborative, and easily shared!
+
+> Ideally, we immerse students in *modern* data practices
+
+## A Bit About Me
+
+::: {.important style="float: left; width: 65%;"}
+-   Teaching Professor in Department of Statistics at NC State (old picture of me when I was young)
+-   Love mixing computing and statistics
+:::
+
+::: {.important style="float: right; width: 30%;"}
+```{r, echo = FALSE, fig.align='center', out.width = "350px"}
+knitr::include_graphics("img/headshot.jpg")
+```
+:::
+
+## A Bit About Me
+
+-   Most importantly: 
+
+Two kids!
+
+::: {.important style="float: left; width: 50%;"}
+```{r, echo = FALSE, fig.align='center', out.width = "450px"}
+knitr::include_graphics("img/Louisa.jpg")
+```
+:::
+
+::: {.important style="float: right; width: 50%;"}
+```{r, echo = FALSE, fig.align='center', out.width = "450px"}
+knitr::include_graphics("img/Walter.jpg")
+```
+:::
+
+## Cooking
+
+Louisa loves to 'cook'
+
+::: {.important style="float: right; width: 33%;"}
+```{r, echo = FALSE, fig.align='center', out.width = "450px"}
+knitr::include_graphics("img/Louisa_cook.jpg")
+```
+:::
+
+::: {.important style="float: right; width: 33%;"}
+```{r, echo = FALSE, fig.align='center', out.width = "450px"}
+knitr::include_graphics("img/Louisa_cook_2.jpg")
+```
+:::
+
+::: {.important style="float: right; width: 33%;"}
+```{r, echo = FALSE, fig.align='center', out.width = "450px"}
+knitr::include_graphics("img/Louisa_flour.jpg")
+```
+:::
+
+## Delicious Meal!
+
+```{r, echo = FALSE, fig.align='center', out.width = "350px"}
+knitr::include_graphics("img/food_good.jpg")
+```
+
+Delicious! She did it!
+
+
+## Including Thoughts/Comments
+
+Lousia has trouble remembering what she was thinking when trying her recipes! 
+
+```{r, echo = FALSE, fig.align='center'}
+knitr::include_graphics("img/Louisa_work.jpg")
+```
+
+
+## Fatherly Advice: Quarto
+
+If only she'd use Quarto (or perhaps Jupyter) Notebooks!
+
+
+## Fatherly Advice: Quarto
+
+If only she'd use Quarto (or perhaps Jupyter) Notebooks!
+
+::: {.important style="float: left; width: 50%;"}
+-   Give us a way to include thoughts and comments with nice formatting
+- Can output to HTML, PDF, Word, Power Point, ...
+- Code can be included and output automatically embedded!
+:::
+
+::: {.important style="float: right; width: 50%;"}
+```{r, echo = FALSE, fig.align='center', out.width = "450px"}
+knitr::include_graphics("img/quarto.png")
+```
+:::
+
+## Quarto
+
+Designed to be used in three ways ([R for Data Science](https://r4ds.hadley.nz/quarto))
+
+-   Communicating to decision makers (focus on conclusions not code)
+
+-   Collaborating with other data scientists (including future you!)
+
+-   As environment to do data science (documents what you did and what you were thinking)
+
+
+## Take-Away
+
+Have students document their thought processes and work along the way!
+
+- Supply narratives to EDA
+
+    - Why do we care about this awesome graph/stat you've found?
+
+- Never give a graph/result/etc. without discussing it!
+
+Some example projects: <a href = "https://go.ncsu.edu/reproducible_workflows" target ="_blank">https://go.ncsu.edu/reproducible_workflows</a>
+
+
+## Can't Make the Delicious Meal Again!
+
+```{r, echo = FALSE, fig.align='center', out.width = "250px"}
+knitr::include_graphics("img/bad_food.jpg")
+```
+
+She changed some things in the recipe and now can't get it right!
+
+- Oh no! Lack of reproducibility!
+
+
+## Fatherly Advice: Git/GitHub
+
+If she'd just used Git/GitHub to track her past recipes, we wouldn't be in this mess!
+
+
+## Fatherly Advice: Git/GitHub
+
+If she'd just used Git/GitHub to track her past recipes, we wouldn't be in this mess!
+
+::: {.important style="float: left; width: 45%;"}
+-   Git: keeps all recipe versions without this -->
+:::
+
+::: {.important style="float: right; width: 55%;"}
+```{r, echo = FALSE, fig.align='center', out.width = "350px"}
+knitr::include_graphics("img/final_doc.png")
+```
+:::
+
+
+## Git: Version Control Software
+
+- Install git and then you associate it with a folder (repo)
+
+    -   Git keeps track of all files in the folder (repo)
+    -   If you want to keep changes you've made, you **commit** the changes
+    
+```{r, echo = FALSE, fig.align='center'}
+knitr::include_graphics("img/git_tracking.png")
+```
+
+
+## Git & GitHub
+
+-   **Git** is a version control software
+
+-   **Github** is an online hosting service for Git-based projects
+
+    -   Very useful for collaborating and sharing work!
+
+```{r, echo = FALSE, fig.align='center'}
+knitr::include_graphics("img/github.png")
+```
+
+
+## Basic Git Workflow (Individual)
+
+1. (Initially) **clone** the repo locally.  (Later) **pull** to get most recent versions of files
+
+2. Work and make changes
+
+3. **add** and **commit** to changes you like
+
+4. **push** changes to remote repo (on github)
+
+
+## Take Away
+
+Version control software simplifies your life!
+
+- Widely used in industry
+
+## Take Away
+
+Version control software simplifies your life!
+
+- Widely used in industry
+
+More Technical vs Less Technical Courses
+
+- Installing Git & `R`/`RStudio`/`Anaconda` may or may not be feasible
+
+- Can use web-based programming environments like <a href = "https://colab.research.google.com/" target = "_blank">Google Colab</a> with a `.ipynb` file
+
+- Note: GitHub can be used without installing anything!
+
+
+## Mixing Cuisines!
+
+Issue: Louisa keeps getting her Chinese food recipes mixed up with her Italian recipes!
+
+```{r, echo = FALSE, fig.align='center'}
+knitr::include_graphics("img/Louisa_work_2.jpg")
+```
+
+
+## Fatherly Advice: R Projects
+
+If only she'd use R projects!
+
+::: {.important style="float: right; width: 50%;"}
+```{r, echo = FALSE, fig.align='center', out.width = "450px"}
+knitr::include_graphics("img/R_project.png")
+```
+:::
+
+## R Projects
+
+- Basically a file that gets associated with a folder (repo)
+
+- Maintains a working directory, history, environment, etc.
+
+- Easy to switch between projects without losing work/needing to rerun code
+
+- Combines flawlessly with github!
+
+## Take Away
+
+R projects provide a straightforward way to divide your work into multiple contexts
+
+- Usually associated with a folder
+- R projects can be created from github repos!
+- Spyder IDE for python has similar functionality
+
+
+## Sharing Recipes
+
+Louisa wants to share & collaborate with her friends! 
+
+```{r, echo = FALSE, fig.align='center'}
+knitr::include_graphics("img/Louisa_Cora.jpg")
+```
+
+## Fatherly Advice: Use Quarto/R Projects/Github
+
+If only she'd used an **R project** with **Quarto documents** while being linked to **GitHub**!
+
+
+## Collaboration with Git & GitHub
+
+- Everyone can work on the same `branch` and just take turns working
+
+```{r, echo = FALSE, fig.align='center', out.width = "500px"}
+knitr::include_graphics("img/git_diagram.png")
+```
+
+
+## Working on Branches
+
+- Alternatively, you can have separate **branches** of the repo
+
+```{r, echo = FALSE, fig.align='center', out.width = "500px"}
+knitr::include_graphics("img/git_branch_diagram.png")
+```
+
+- Work on a branch is similar to working on the main branch
+
+- Can **merge** branches when happy!
+
+
+## Take Away
+
+Version control software that allows for collaboration and working on separate versions of code is an industry standard!
+
+- Git has a steep learning curve but the basics can be done with the web platform
+
+
+## List of Tools
+
+- Quarto: Integrate text and code to create useful output docs
+- R Project: Keep analysis in its own context
+- Git: Version control software
+- GitHub: Online platform for using git/collaborating
+- [Google Colab](https://colab.research.google.com/) - web based way to program in python and R 
+
+
+## Communicating!
+
+- Quarto can be used to create websites on GitHub!
+
+    + <https://jbpost2.github.io/ST-558-Data-Science-for-Statisticians/>
+    + <https://jbpost2.github.io/ST-554-Big-Data-with-Python/>
+
+
+## The AI Thing...
+
+- New sites the run code with AI
+
+    + https://rtutor.ai/ 
+
+    + Chicken data questions: 
+    
+        - Do the weights differ by diet?
+        - How do we take into account time?
+        - Can we create a spaghetti plot of chick weights by diet over time?
+        - Can we add lines for the mean of each diet group?
+  
+    + Can grab a markdown report!
+
+## Recap
+
+Reproducibility means:
+
+- Entire analysis can be redone from start to finish
+
+    - Git enables us to do version control
+    - GitHub enables us to collaborate and share
+
+- Code should be documented with thought process
+
+    - Quarto or Jupyter Notebooks allow for interweaving of text and code
+    
+- R projects are great for separating analyses
+
+## Questions/Contact
+
+- `justin_post@ncsu.edu`
+
+- <a href = "https://go.ncsu.edu/reproducible_workflows" target ="_blank">https://go.ncsu.edu/reproducible_workflows</a>
+
+- Special thanks to Louisa
+
+```{r, echo = FALSE, fig.align='center', out.width = "500px"}
+knitr::include_graphics("img/Louisa_eat.jpg")
+```
+
