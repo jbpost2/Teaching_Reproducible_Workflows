@@ -5,5 +5,257 @@
     "title": "Reproducible Workflows",
     "section": "",
     "text": "The main presentation is available here!\nThe GitHub site is available here\n\nThe following are supplemental resources that could be useful:\n\nBasics of git and GitHub\nInformation for using RStudio with GitHub\nInformation about using Markdown and Quarto.\nInformation about creating a web site with quarto and GitHub.\nInformation for using Google Colab with Github\n\nHere are some example projects that include instructions for the use of a Markdown narrative:\n\nR-based project on querying an API and summarize the returned data\nR-based project on exploring data, fitting models, and building an API with a docker container"
+  },
+  {
+    "objectID": "presentation.html#welcome",
+    "href": "presentation.html#welcome",
+    "title": "Teaching Reproducible Workflows",
+    "section": "Welcome!",
+    "text": "Welcome!\n\nGoals:\n\nDiscuss reproducible workflows\nImplement a reproducible workflow with Git/GitHub"
+  },
+  {
+    "objectID": "presentation.html#let-me-get-to-know-you",
+    "href": "presentation.html#let-me-get-to-know-you",
+    "title": "Teaching Reproducible Workflows",
+    "section": "Let me get to know you!",
+    "text": "Let me get to know you!\nPlease head to this online poll:\n\nhttps://app.wooclap.com/IOQROK?from=event-page\n\n\n\nIn the downtime, say hello to the people next to you!"
+  },
+  {
+    "objectID": "presentation.html#analysisdata-science-workflow",
+    "href": "presentation.html#analysisdata-science-workflow",
+    "title": "Teaching Reproducible Workflows",
+    "section": "Analysis/Data Science Workflow",
+    "text": "Analysis/Data Science Workflow\nOften\n\nRead in/connect to raw data set\nManipulate/Combine data\nSummarize to glean insights\nApply common analysis methods\nCommunicate Effectively"
+  },
+  {
+    "objectID": "presentation.html#big-issues",
+    "href": "presentation.html#big-issues",
+    "title": "Teaching Reproducible Workflows",
+    "section": "Big Issues",
+    "text": "Big Issues\nPushed by psychology, journals are requiring preregistration, data for submissions, and code to be available in order to reproduce studies\n\nWe have a responsibility to help create literate, critical, ethical thinkers in this world of big data"
+  },
+  {
+    "objectID": "presentation.html#big-issues-1",
+    "href": "presentation.html#big-issues-1",
+    "title": "Teaching Reproducible Workflows",
+    "section": "Big Issues",
+    "text": "Big Issues\nPushed by psychology, journals are requiring preregistration, data for submissions, and code to be available in order to reproduce studies\n\nWe have a responsibility to help create literate, critical, ethical thinkers in this world of big data\n\n\nWant to document this process and make it reproducible, collaborative, and easily shared!\n\n\nIdeally, we immerse students in modern data practices"
+  },
+  {
+    "objectID": "presentation.html#a-bit-about-me",
+    "href": "presentation.html#a-bit-about-me",
+    "title": "Teaching Reproducible Workflows",
+    "section": "A Bit About Me",
+    "text": "A Bit About Me\n\n\nTeaching Professor in Department of Statistics at NC State (old picture of me when I was young)\nLove mixing computing and statistics"
+  },
+  {
+    "objectID": "presentation.html#a-bit-about-me-1",
+    "href": "presentation.html#a-bit-about-me-1",
+    "title": "Teaching Reproducible Workflows",
+    "section": "A Bit About Me",
+    "text": "A Bit About Me\n\nMost importantly:\n\nTwo kids!"
+  },
+  {
+    "objectID": "presentation.html#cooking",
+    "href": "presentation.html#cooking",
+    "title": "Teaching Reproducible Workflows",
+    "section": "Cooking",
+    "text": "Cooking\nLouisa loves to ‘cook’"
+  },
+  {
+    "objectID": "presentation.html#delicious-meal",
+    "href": "presentation.html#delicious-meal",
+    "title": "Teaching Reproducible Workflows",
+    "section": "Delicious Meal!",
+    "text": "Delicious Meal!\n\nDelicious! She did it!"
+  },
+  {
+    "objectID": "presentation.html#including-thoughtscomments",
+    "href": "presentation.html#including-thoughtscomments",
+    "title": "Teaching Reproducible Workflows",
+    "section": "Including Thoughts/Comments",
+    "text": "Including Thoughts/Comments\nLousia has trouble remembering what she was thinking when trying her recipes!"
+  },
+  {
+    "objectID": "presentation.html#fatherly-advice-quarto",
+    "href": "presentation.html#fatherly-advice-quarto",
+    "title": "Teaching Reproducible Workflows",
+    "section": "Fatherly Advice: Quarto",
+    "text": "Fatherly Advice: Quarto\nIf only she’d use Quarto (or perhaps Jupyter) Notebooks!"
+  },
+  {
+    "objectID": "presentation.html#fatherly-advice-quarto-1",
+    "href": "presentation.html#fatherly-advice-quarto-1",
+    "title": "Teaching Reproducible Workflows",
+    "section": "Fatherly Advice: Quarto",
+    "text": "Fatherly Advice: Quarto\nIf only she’d use Quarto (or perhaps Jupyter) Notebooks!\n\n\nGive us a way to include thoughts and comments with nice formatting\nCan output to HTML, PDF, Word, Power Point, …\nCode can be included and output automatically embedded!"
+  },
+  {
+    "objectID": "presentation.html#quarto",
+    "href": "presentation.html#quarto",
+    "title": "Teaching Reproducible Workflows",
+    "section": "Quarto",
+    "text": "Quarto\nDesigned to be used in three ways (R for Data Science)\n\nCommunicating to decision makers (focus on conclusions not code)\nCollaborating with other data scientists (including future you!)\nAs environment to do data science (documents what you did and what you were thinking)"
+  },
+  {
+    "objectID": "presentation.html#take-away",
+    "href": "presentation.html#take-away",
+    "title": "Teaching Reproducible Workflows",
+    "section": "Take-Away",
+    "text": "Take-Away\nHave students document their thought processes and work along the way!\n\nSupply narratives to EDA\n\nWhy do we care about this awesome graph/stat you’ve found?\n\nNever give a graph/result/etc. without discussing it!\n\nSome example projects: https://go.ncsu.edu/reproducible_workflows"
+  },
+  {
+    "objectID": "presentation.html#cant-make-the-delicious-meal-again",
+    "href": "presentation.html#cant-make-the-delicious-meal-again",
+    "title": "Teaching Reproducible Workflows",
+    "section": "Can’t Make the Delicious Meal Again!",
+    "text": "Can’t Make the Delicious Meal Again!\n\nShe changed some things in the recipe and now can’t get it right!\n\nOh no! Lack of reproducibility!"
+  },
+  {
+    "objectID": "presentation.html#fatherly-advice-gitgithub",
+    "href": "presentation.html#fatherly-advice-gitgithub",
+    "title": "Teaching Reproducible Workflows",
+    "section": "Fatherly Advice: Git/GitHub",
+    "text": "Fatherly Advice: Git/GitHub\nIf she’d just used Git/GitHub to track her past recipes, we wouldn’t be in this mess!"
+  },
+  {
+    "objectID": "presentation.html#fatherly-advice-gitgithub-1",
+    "href": "presentation.html#fatherly-advice-gitgithub-1",
+    "title": "Teaching Reproducible Workflows",
+    "section": "Fatherly Advice: Git/GitHub",
+    "text": "Fatherly Advice: Git/GitHub\nIf she’d just used Git/GitHub to track her past recipes, we wouldn’t be in this mess!\n\n\nGit: keeps all recipe versions without this –&gt;"
+  },
+  {
+    "objectID": "presentation.html#git-version-control-software",
+    "href": "presentation.html#git-version-control-software",
+    "title": "Teaching Reproducible Workflows",
+    "section": "Git: Version Control Software",
+    "text": "Git: Version Control Software\n\nInstall git and then you associate it with a folder (repo)\n\nGit keeps track of all files in the folder (repo)\nIf you want to keep changes you’ve made, you commit the changes"
+  },
+  {
+    "objectID": "presentation.html#git-github",
+    "href": "presentation.html#git-github",
+    "title": "Teaching Reproducible Workflows",
+    "section": "Git & GitHub",
+    "text": "Git & GitHub\n\nGit is a version control software\nGithub is an online hosting service for Git-based projects\n\nVery useful for collaborating and sharing work!"
+  },
+  {
+    "objectID": "presentation.html#basic-git-workflow-individual",
+    "href": "presentation.html#basic-git-workflow-individual",
+    "title": "Teaching Reproducible Workflows",
+    "section": "Basic Git Workflow (Individual)",
+    "text": "Basic Git Workflow (Individual)\n\n(Initially) clone the repo locally. (Later) pull to get most recent versions of files\nWork and make changes\nadd and commit to changes you like\npush changes to remote repo (on github)"
+  },
+  {
+    "objectID": "presentation.html#take-away-1",
+    "href": "presentation.html#take-away-1",
+    "title": "Teaching Reproducible Workflows",
+    "section": "Take Away",
+    "text": "Take Away\nVersion control software simplifies your life!\n\nWidely used in industry"
+  },
+  {
+    "objectID": "presentation.html#take-away-2",
+    "href": "presentation.html#take-away-2",
+    "title": "Teaching Reproducible Workflows",
+    "section": "Take Away",
+    "text": "Take Away\nVersion control software simplifies your life!\n\nWidely used in industry\n\nMore Technical vs Less Technical Courses\n\nInstalling Git & R/RStudio/Anaconda may or may not be feasible\nCan use web-based programming environments like Google Colab with a .ipynb file\nNote: GitHub can be used without installing anything!"
+  },
+  {
+    "objectID": "presentation.html#mixing-cuisines",
+    "href": "presentation.html#mixing-cuisines",
+    "title": "Teaching Reproducible Workflows",
+    "section": "Mixing Cuisines!",
+    "text": "Mixing Cuisines!\nIssue: Louisa keeps getting her Chinese food recipes mixed up with her Italian recipes!"
+  },
+  {
+    "objectID": "presentation.html#fatherly-advice-r-projects",
+    "href": "presentation.html#fatherly-advice-r-projects",
+    "title": "Teaching Reproducible Workflows",
+    "section": "Fatherly Advice: R Projects",
+    "text": "Fatherly Advice: R Projects\nIf only she’d use R projects!"
+  },
+  {
+    "objectID": "presentation.html#r-projects",
+    "href": "presentation.html#r-projects",
+    "title": "Teaching Reproducible Workflows",
+    "section": "R Projects",
+    "text": "R Projects\n\nBasically a file that gets associated with a folder (repo)\nMaintains a working directory, history, environment, etc.\nEasy to switch between projects without losing work/needing to rerun code\nCombines flawlessly with github!"
+  },
+  {
+    "objectID": "presentation.html#take-away-3",
+    "href": "presentation.html#take-away-3",
+    "title": "Teaching Reproducible Workflows",
+    "section": "Take Away",
+    "text": "Take Away\nR projects provide a straightforward way to divide your work into multiple contexts\n\nUsually associated with a folder\nR projects can be created from github repos!\nSpyder IDE for python has similar functionality"
+  },
+  {
+    "objectID": "presentation.html#sharing-recipes",
+    "href": "presentation.html#sharing-recipes",
+    "title": "Teaching Reproducible Workflows",
+    "section": "Sharing Recipes",
+    "text": "Sharing Recipes\nLouisa wants to share & collaborate with her friends!"
+  },
+  {
+    "objectID": "presentation.html#fatherly-advice-use-quartor-projectsgithub",
+    "href": "presentation.html#fatherly-advice-use-quartor-projectsgithub",
+    "title": "Teaching Reproducible Workflows",
+    "section": "Fatherly Advice: Use Quarto/R Projects/Github",
+    "text": "Fatherly Advice: Use Quarto/R Projects/Github\nIf only she’d used an R project with Quarto documents while being linked to GitHub!"
+  },
+  {
+    "objectID": "presentation.html#collaboration-with-git-github",
+    "href": "presentation.html#collaboration-with-git-github",
+    "title": "Teaching Reproducible Workflows",
+    "section": "Collaboration with Git & GitHub",
+    "text": "Collaboration with Git & GitHub\n\nEveryone can work on the same branch and just take turns working"
+  },
+  {
+    "objectID": "presentation.html#working-on-branches",
+    "href": "presentation.html#working-on-branches",
+    "title": "Teaching Reproducible Workflows",
+    "section": "Working on Branches",
+    "text": "Working on Branches\n\nAlternatively, you can have separate branches of the repo\n\n\n\nWork on a branch is similar to working on the main branch\nCan merge branches when happy!"
+  },
+  {
+    "objectID": "presentation.html#take-away-4",
+    "href": "presentation.html#take-away-4",
+    "title": "Teaching Reproducible Workflows",
+    "section": "Take Away",
+    "text": "Take Away\nVersion control software that allows for collaboration and working on separate versions of code is an industry standard!\n\nGit has a steep learning curve but the basics can be done with the web platform"
+  },
+  {
+    "objectID": "presentation.html#list-of-tools",
+    "href": "presentation.html#list-of-tools",
+    "title": "Teaching Reproducible Workflows",
+    "section": "List of Tools",
+    "text": "List of Tools\n\nQuarto: Integrate text and code to create useful output docs\nR Project: Keep analysis in its own context\nGit: Version control software\nGitHub: Online platform for using git/collaborating\nGoogle Colab - web based way to program in python and R"
+  },
+  {
+    "objectID": "presentation.html#communicating",
+    "href": "presentation.html#communicating",
+    "title": "Teaching Reproducible Workflows",
+    "section": "Communicating!",
+    "text": "Communicating!\n\nQuarto can be used to create websites on GitHub!\n\nhttps://jbpost2.github.io/ST-558-Data-Science-for-Statisticians/\nhttps://jbpost2.github.io/ST-554-Big-Data-with-Python/"
+  },
+  {
+    "objectID": "presentation.html#the-ai-thing",
+    "href": "presentation.html#the-ai-thing",
+    "title": "Teaching Reproducible Workflows",
+    "section": "The AI Thing…",
+    "text": "The AI Thing…\n\nNew sites the run code with AI\n\nhttps://rtutor.ai/\nChicken data questions:\n\nDo the weights differ by diet?\nHow do we take into account time?\nCan we create a spaghetti plot of chick weights by diet over time?\nCan we add lines for the mean of each diet group?\n\nCan grab a markdown report!"
+  },
+  {
+    "objectID": "presentation.html#recap",
+    "href": "presentation.html#recap",
+    "title": "Teaching Reproducible Workflows",
+    "section": "Recap",
+    "text": "Recap\nReproducibility means:\n\nEntire analysis can be redone from start to finish\n\nGit enables us to do version control\nGitHub enables us to collaborate and share\n\nCode should be documented with thought process\n\nQuarto or Jupyter Notebooks allow for interweaving of text and code\n\nR projects are great for separating analyses"
+  },
+  {
+    "objectID": "presentation.html#questionscontact",
+    "href": "presentation.html#questionscontact",
+    "title": "Teaching Reproducible Workflows",
+    "section": "Questions/Contact",
+    "text": "Questions/Contact\n\njustin_post@ncsu.edu\nhttps://go.ncsu.edu/reproducible_workflows\nSpecial thanks to Louisa"
   }
 ]

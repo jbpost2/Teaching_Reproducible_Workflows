@@ -1,12 +1,10 @@
 project:
   type: website
   output-dir: docs
-  render: 
+  render:
     - index.qmd
     - Creating_Web_Site.qmd
     - Git_GitHub.qmd
     - presentation.qmd
     - quarto_Markdown.qmd
     - RStudio_GitHub.qmd
-theme: 
-  - slate
