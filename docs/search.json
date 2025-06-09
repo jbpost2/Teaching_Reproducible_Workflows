@@ -1,0 +1,9 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Reproducible Workflows",
+    "section": "",
+    "text": "The main presentation is available here!\nThe GitHub site is available here\n\nThe following are supplemental resources that could be useful:\n\nBasics of git and GitHub\nInformation for using RStudio with GitHub\nInformation about using Markdown and Quarto.\nInformation about creating a web site with quarto and GitHub.\nInformation for using Google Colab with Github\n\nHere are some example projects that include instructions for the use of a Markdown narrative:\n\nR-based project on querying an API and summarize the returned data\nR-based project on exploring data, fitting models, and building an API with a docker container"
+  }
+]

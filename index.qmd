@@ -1,17 +1,20 @@
 ---
-title: "Reproducibility with Github & RStudio or Google Colab"
+title: "Reproducible Workflows"
 format: html
 ---
 
-The page here and those linked are supplemental material for those that might want to learn a bit more!
+- The [main presentation is available here](presentation.qmd)!
+- The [GitHub site is available here](https://github.com/jbpost2/Teaching_Reproducible_Workflows)
 
-- The [main presentation is available here](Presentation.qmd)!
-- The [GitHub site is available here](https://github.com/jbpost2/eCOTS_2024)
-
-The following are supplemental resources that you might find useful:
+The following are supplemental resources that could be useful:
 
 - [Basics of git and GitHub](Git_GitHub.qmd)
 - Information for [using RStudio with GitHub](RStudio_GitHub.qmd)
 - Information about [using Markdown and Quarto.](quarto_Markdown.qmd)
 - Information about [creating a web site with quarto and GitHub.](Creating_Web_Site.qmd)
 - Information for [using Google Colab with Github](https://colab.research.google.com/github/jbpost2/eCOTS_2024/blob/main/Using_Google_Colab_with_GitHub.ipynb)
+
+Here are some example projects that include instructions for the use of a Markdown narrative:
+
+- [R-based project](files/558_Project1.pdf) on querying an API and summarize the returned data
+- [R-based project](files/558_Final_Project.pdf) on exploring data, fitting models, and building an API with a docker container
